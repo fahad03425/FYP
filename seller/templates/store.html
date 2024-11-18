@@ -1,0 +1,98 @@
+{% extends 'portalbase.html' %}
+
+{% block title %}
+Seller | Store Management
+{% endblock %}
+
+{% block pagetitle %}
+Store Management
+{% endblock %}
+
+{% load static %}  <!-- Load static files tag -->
+
+{% block vcontent %}
+<div class="pl-10 pt-10 pr-10 h-screen w-full bg-slate-200">
+    
+    <div class="p-8 bg-white rounded-lg shadow-lg w-full mx-auto">
+        <!-- Store Profile Section -->
+        <div class="flex items-center mb-6">
+            <div class="relative">
+                <!-- Profile Image Circle -->
+                <div class="w-24 h-24 rounded-full bg-gray-200 flex items-center justify-center">
+                    <!-- Placeholder for profile picture -->
+                    <img id="profileImage" src="{% static 'images/mobimg1.jpeg' %}" alt="Store Logo" class="w-full h-full rounded-full object-cover">
+                </div>
+                <!-- Hover effect to show upload option -->
+                <div class="absolute top-2 left-3 w-30 h-30 rounded-full bg-gray-800 bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                    <input type="file" id="uploadImage" class="hidden" />
+                    <label for="uploadImage" class="cursor-pointer text-black text-lg">Upload</label>
+                </div>
+            </div>
+            <div class="ml-6">
+                <h2 class="text-2xl font-semibold">Store Name</h2>
+            
+            </div>
+        </div>
+
+        <!-- Store ID Section -->
+        <div class="mb-6">
+            <label for="storeId" class="block text-gray-700 font-semibold text-xl">Store ID</label>
+            <input type="text" id="storeId" class="mt-2 p-2 border border-gray-300 rounded-md w-1/5" placeholder="Store ID">
+        </div>
+
+        <!-- Toggle Options -->
+        <div class="flex-col  gap-10 mb-6">
+            <div class="flex">
+                <label for="holidayMode" class="block text-gray-700 text-xl font-semibold mr-3 mb-5">Holiday Mode</label>
+                <input type="checkbox" id="holidayMode" class="mt-2" checked />
+            </div>
+            <div class="flex" >
+                <label for="listings" class="block text-gray-700 text-xl font-semibold mr-3">Listings</label>
+                <input type="checkbox" id="listings" class="mt-2" checked />
+            </div>
+        </div>
+
+        <!-- Additional Features Section -->
+        <div class="mt-8">
+            <div class="flex-col gap-6">
+                <!-- Shipping Settings -->
+                <div class="w-1/2">
+                    <h4 class="font-semibold mb-2 text-2xl">Shipping Options</h4>
+                    <div>
+                        <label for="shippingMethod" class="block text-lg font-semibold mt-5 mb-1 ">Shipping Method</label>
+                        <select id="shippingMethod" class="mt-2 p-2 border border-gray-300 rounded-md w-full">
+                            <option value="standard">Standard Shipping</option>
+                            <option value="express">Express Shipping</option>
+                            <option value="pickup">In-store Pickup</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Store Policies -->
+                <div class="w-1/2">
+                    <h4 class="text-lg font-semibold mb-1 mt-5">Store Policies</h4>
+                    <textarea class="mt-2 p-2 border border-gray-300 rounded-md w-full h-24" placeholder="Enter store policies (return, shipping, etc.)"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Save Button -->
+        <div class="mt-6 text-right">
+            <button class="bg-bluish text-white px-6 py-2 rounded-md hover:bg-indigo-700 transition">Save Changes</button>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    // Script to handle image upload preview
+    document.getElementById('uploadImage').addEventListener('change', function(event) {
+        const [file] = event.target.files;
+        if (file) {
+            document.getElementById('profileImage').src = URL.createObjectURL(file);
+        }
+    });
+</script>
+
+{% endblock %}
+

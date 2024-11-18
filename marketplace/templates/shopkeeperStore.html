@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="mt-10">
+    <div class="container mx-auto px-10">
+        <div class="flex justify-between items-center mb-6 border-t border-black my-4">
+            <h2 class="text-3xl font-bold">Products</h2>
+        </div>
+
+        <!-- Flexbox layout for 4 cards per row with reduced gap -->
+        <div class="flex flex-wrap gap-4"> <!-- Reduced gap -->
+            {% for product in products %}
+            <div class="lg:w-1/4 p-2 mx-auto"> <!-- Reduced padding -->
+                {% include 'components/mproduct_card.html' with image=product.image title=product.title price=product.price label=product.label %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

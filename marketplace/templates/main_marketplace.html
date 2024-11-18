@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="flex ml-11 mt-10  w-11/12">
+    {% include 'components/filters.html' %}
+    <div class="flex-grow">
+        <div class="pt-3 pl-3 pb-2 border-b ml-4">
+            <div class="flex justify-between items-center mb-4">
+                <h1 class="text-2xl font-bold ml-2">Product</h1>
+                <div class="flex space-x-4 items-center">
+                    <div>
+                        <label class="mr-2">Showing</label>
+                        <select class="border rounded p-2 px-5">
+                            <option>1-24</option>
+                            <option>25-48</option>
+                            <option>49-72</option>
+                            <option>73-96</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="mr-2">Sort by</label>
+                        <select class="border rounded p-2">
+                            <option>Price</option>
+                            <option>Newest</option>
+                            <option>Best Selling</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4 w-full">
+            {% for product in products %}
+                {% include 'components/mproduct_card.html' with product=product %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+

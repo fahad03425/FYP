@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class=" justify-center">
+    <div class=" bg-white text-gray-800 w-full ">
+        <!-- Container for the main content -->
+        <div class="container mx-auto ml-11 mt-10  w-11/12 ">
+            <!-- product component -->
+            {% include 'components/productDetailDesc.html' %}
+        </div>
+
+        <div class=" flex flex-col lg:flex-row space-y-8 lg:space-y-0 lg:space-x-8 lg:p-8">
+            <!-- Related Models component -->
+                <div class="lg:w-1/2 w-full ">
+                     {% include "components/relatedModelDesc.html" %}
+                </div>
+
+            <!-- Product Table component -->
+                 <div class="lg:w-1/4 w-full">
+                      {% include "components/productTableDesc.html" %}
+                </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

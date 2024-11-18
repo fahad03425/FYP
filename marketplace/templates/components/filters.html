@@ -1,0 +1,64 @@
+<!-- templates/components/filters.html -->
+
+<div class="w-64 p-4 border rounded-lg h-120 bg-white shadow dark:bg-gray-700 dark:border-gray-600">
+    <input
+        type="text"
+        placeholder="Search By Keyword"
+        class="w-full mb-4 p-2 text-sm bg-gray-50 border border-gray-300 rounded dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+    />
+    <button class="w-full mb-4 p-2 text-sm text-white bg-bluish hover:bg-violet-600 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+        Clear All Filters
+    </button>
+
+    <div class="relative mb-4">
+        <h3 class="font-bold mb-2 text-gray-700 dark:text-gray-200">Condition</h3>
+        <select class="block w-full bg-white border py-2 pl-4 pr-8 border-gray-300 rounded-lg shadow-lg dark:bg-gray-600 dark:border-gray-500 dark:text-white">
+            <option>Select Condition</option>
+            <option>New</option>
+            <option>Used</option>
+        </select>
+    </div>
+
+    <div class="relative mb-4">
+        <h3 class="font-bold mb-2 text-gray-700 dark:text-gray-200">City</h3>
+        <select class="block w-full bg-white border py-2 pl-4 pr-8 border-gray-300 rounded-lg shadow-lg dark:bg-gray-600 dark:border-gray-500 dark:text-white">
+            <option>Select City</option>
+            <option>Lahore</option>
+            <option>Islamabad</option>
+            <option>Karachi</option>
+        </select>
+    </div>
+
+    <div class="relative mb-4">
+        <h3 class="font-bold mb-2 text-gray-700 dark:text-gray-200">Color</h3>
+        <select class="block w-full bg-white border py-2 pl-4 pr-8 border-gray-300 rounded-lg shadow-lg dark:bg-gray-600 dark:border-gray-500 dark:text-white">
+            <option>Select Color</option>
+            <option>Black</option>
+            <option>Blue</option>
+            <option>Silver</option>
+        </select>
+    </div>
+
+    <div class="relative mb-4">
+        <h3 class="font-bold mb-2 text-gray-700 dark:text-gray-200">Exchange</h3>
+        <select class="block w-full bg-white border py-2 pl-4 pr-8 border-gray-300 rounded-lg shadow-lg dark:bg-gray-600 dark:border-gray-500 dark:text-white">
+            <option>Select Exchange</option>
+            <option>New</option>
+            <option>Used</option>
+        </select>
+    </div>
+
+    <div class="mb-4">
+        <h3 class="font-bold mb-2 text-gray-700 dark:text-gray-200">Price Range</h3>
+        <input
+            type="range"
+            min="10000"
+            max="150000"
+            class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-600"
+        />
+        <div class="flex justify-between text-sm text-gray-500 dark:text-gray-400 mt-2">
+            <span>(Rs10000)</span>
+            <span>(Rs150000)</span>
+        </div>
+    </div>
+</div>

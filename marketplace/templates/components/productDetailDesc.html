@@ -1,0 +1,43 @@
+{% load static %}
+
+<div class="flex flex-col lg:flex-row bg-white shadow-lg rounded-lg overflow-hidden w-full max-w-6xl mx-auto">
+    <div class="flex-grow flex flex-col lg:flex-row p-4 w-full lg:w-4/5">
+
+        <!-- Display Product Image -->
+        <div class="lg:w-1/2 flex justify-center">
+            <!-- Use the dynamic URL for the image -->
+            <img src="{{ product_images.0.image.url }}" alt="Main product image" class="w-full h-auto max-w-md rounded-lg border">
+        </div>
+
+        <!-- Product Details -->
+        <div class="lg:w-1/2 flex flex-col justify-between p-4">
+            <div>
+                <h2 class="text-5xl mb-2 font-bold">{{ product.name }}</h2>
+                <a href="#" class="text-blue-600 underline text-xl font-medium">Visit store</a>
+                <p class="mt-8 font-bold text-3xl">Rs {{ product.price }}</p>
+                <div class="mt-10 text-xl">
+                    <p><strong>Model:</strong> {{ product.model }}</p>
+                    <p><strong>Brand:</strong> {{ product.brand }}</p>
+                    <p><strong>Condition:</strong> {{ product.condition }}</p>
+                    <p><strong>Availability:</strong> <span class="text-blue-500">{{ product.availability }}</span></p>
+                </div>
+
+                <!-- Add to Cart Button -->
+                <div class="mt-6 flex">
+                    <div>
+                        <!-- URL for Booking form -->
+                        <a href="" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg w-40">
+                            Book Now
+                        </a>
+                    </div>
+                    <div class="ml-4">
+                        <button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg w-40">
+                            Seller Information
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>

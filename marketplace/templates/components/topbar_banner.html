@@ -1,0 +1,47 @@
+{% load static %}
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Topbar Banner</title>
+    {% tailwind_css %}
+  </head>
+  <body>
+    <main class="main 3xl:mx-custom-margin">
+      <div class="border-b flex-wrap container mx-auto flex justify-between items-center py-2">
+        <div class="flex items-center px-0 gap-2 flex-grow justify-center lg:justify-start">
+          <span>
+            PhoneKart - Bridging Tech Fans and Top Retailers
+            <a class="text-bluish underline hover:text-blue-700 hover:underline" href="">
+              Know more
+            </a>
+          </span>
+        </div>
+        <div class="flex items-center justify-end pe-0 gap-3 lg:flex">
+          {% if user.is_authenticated %}
+            <div class="flex items-center gap-2 cursor-pointer">
+              <span>Welcome, {{ user.first_name }}</span>
+              <!-- Logout link -->
+            </div>
+          {% else %}
+            <div class="flex items-center gap-2 cursor-pointer">
+              <img
+               alt="user"
+               loading="lazy"
+               width="16"  
+               height="16" 
+               class="w-4 h-4 text-transparent" 
+               src="{% static 'log-out.png' %}"
+               
+              />
+              <a href="{% url 'marketplace:signin' %}" class="hidden sm:inline">Sign In</a>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
+

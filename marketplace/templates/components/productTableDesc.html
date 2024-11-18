@@ -1,0 +1,20 @@
+    <!-- Include the product description table -->
+    <div class="container mx-auto p-8">
+        <table class="table-auto w-full text-left">
+            <thead>
+                <div class="pl-52 pb-10"><h1 class="text-2xl"><b>Description</b></h1></div>
+                <tr>
+                    <th class="px-4 py-2">Label</th>
+                    <th class="px-4 py-2">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in productTableDesc %}
+                    <tr>
+                        <td class="border px-4 py-2">{{ item.label }}</td>
+                        <td class="border px-4 py-2">{{ item.value }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>

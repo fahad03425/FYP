@@ -7,6 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %} Dashboard {% endblock %}</title>
 {% tailwind_css %} <!-- Ensure this is included to load Tailwind -->
+
+<style>
+    /* Enforcing button background color with !important */
+    .bg-red-700-important { background-color: #b91c1c !important; }
+    .hover-bg-red-600-important:hover { background-color: #c2410c !important; }
+    
+    .bg-green-500-important { background-color: #22c55e !important; }
+    .hover-bg-green-600-important:hover { background-color: #16a34a !important; }
+</style>
+
   </head>
   <body class="bg-gray-100">
     <div class="flex h-screen overflow-hidden">
@@ -37,7 +47,7 @@
     </div>
     </div>
 
-    <!-- JavaScript to handle sidebar toggl -->
+    <!-- JavaScript to handle sidebar toggle -->
     <script>
       const sidebarToggle = document.getElementById('sidebarToggle');
       const sidebar = document.getElementById('sidebar');

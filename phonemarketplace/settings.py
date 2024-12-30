@@ -13,7 +13,22 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 import os
 
-DEBUG = False
+
+DEBUG = os.getenv("DEBUG", "False") == "True"  # Set DEBUG via environment variable
+
+if DEBUG:
+    INSTALLED_APPS += ["django_browser_reload"]
+else:
+    INSTALLED_APPS = [app for app in INSTALLED_APPS if app != "django_browser_reload"]
+
+# Add the following security settings for production:
+if not DEBUG:
+    SECURE_SSL_REDIRECT = True
+    CSRF_COOKIE_SECURE = True
+    SESSION_COOKIE_SECURE = True
+    SECURE_HSTS_SECONDS = 31536000
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent

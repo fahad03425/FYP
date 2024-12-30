@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: fyp-4-sten
+    env: python
+    disk:
+      mountPath: /media

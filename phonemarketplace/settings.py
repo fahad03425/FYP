@@ -37,7 +37,7 @@ STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-    os.path.join(BASE_DIR, "media"),  # Example app-specific static dir
+    # Example app-specific static dir
     os.path.join(BASE_DIR, "theme/static"),  # Another example
 ]
 
@@ -54,8 +54,8 @@ STORAGES = {
     },
 }
 
-WHITENOISE_USE_FINDERS = True
-WHITENOISE_ROOT = os.path.join(BASE_DIR, 'media')
+# WHITENOISE_USE_FINDERS = True
+# WHITENOISE_ROOT = os.path.join(BASE_DIR, 'media')
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",  # Keep this one
@@ -69,7 +69,7 @@ MIDDLEWARE = [
 ]
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = '/media' 
 
 TAILWIND_APP_NAME = 'theme'
 INTERNAL_IPS = ['127.0.0.1']

@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'customAdmin',
     'tailwind',
     'theme',
+    'storages',
 ]
 
 # Static files settings

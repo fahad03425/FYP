@@ -45,7 +45,17 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
+
+WHITENOISE_USE_FINDERS = True
+WHITENOISE_ROOT = os.path.join(BASE_DIR, 'media')
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",  # Keep this one

@@ -1,0 +1,14 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "Dockerfile",
+        "use": "@vercel/docker"
+      }
+    ],
+    "env": {
+      "DJANGO_SECRET_KEY": "your_secret_key",
+      "DEBUG": "false"
+    },
+    "outputDirectory": "static"
+  }

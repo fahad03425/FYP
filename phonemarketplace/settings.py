@@ -34,11 +34,17 @@ INSTALLED_APPS = [
 # Static files settings
 STATIC_URL = 'static/'
 
+
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static")
+    os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "media"),  # Example app-specific static dir
+    os.path.join(BASE_DIR, "theme/static"),  # Another example
 ]
 
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 MEDIA_URL = '/media/'

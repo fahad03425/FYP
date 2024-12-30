@@ -77,7 +77,7 @@ INTERNAL_IPS = ['127.0.0.1']
 
 
 
-DEBUG = os.getenv("DEBUG", "False") == "True"
+DEBUG = os.getenv("DEBUG", "true") == "True"
 
 # Security settings for production
 if not DEBUG:

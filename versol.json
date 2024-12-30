@@ -1,14 +1,16 @@
 {
-    "version": 2,
     "builds": [
       {
-        "src": "Dockerfile",
-        "use": "@vercel/docker"
+        "src": "phonemarketplace/wsgi.py",
+        "use": "@vercel/python",
+        "config": {"maxLambdaSize" : "15mb", "runtime": "python3.10" }
+        
       }
     ],
-    "env": {
-      "DJANGO_SECRET_KEY": "your_secret_key",
-      "DEBUG": "false"
-    },
-    "outputDirectory": "static"
+    "routes":[
+        {
+            "src":"/(.*)",
+            "dest":"phonemarketplace/wsgi.py"
+        }
+    ]
   }

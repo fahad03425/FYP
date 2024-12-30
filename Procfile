@@ -1,1 +1,1 @@
-web: gunicorn phonemarketplace.wsgi     
+web: gunicorn phonemarketplace.wsgi:application
